@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Inquiry Chatbot</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        html, body {
+                display: flex;
+                justify-content: center;
+                font-family: Roboto, Arial, sans-serif;
+                font-size: 15px;
+            }
+            form {
+                border: 5px solid #f1f1f1;
+            }
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 16px 8px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+            }
+            .icon {
+                font-size: 110px;
+                display: flex;
+                justify-content: center;
+                color: #FF0000;
+            }
+            .send-button {
+                background-color: #FF0000;
+                color: white;
+                padding: 12px 0;
+                margin: 10px 0;
+                border: none;
+                cursor: grab;
+                width: 12%;
+            }
+            .end-button {
+                background-color: #000000;
+                color: white;
+                padding: 4px 0;
+                margin: 2px 0;
+                border: none;
+                cursor: grab;
+                width: 24%;
+            }
+            h1 {
+                text-align:center;
+                font-size: 28px;
+                color: #FF0000;
+            }
+            button:hover {
+                opacity: 0.8;
+            }
+            .formcontainer {
+                text-align: center;
+                margin: 24px 50px 12px;
+            }
+            .text-box {
+                font-size: 16px;
+                display: flex;
+                width: 100%;
+            }
+            .container {
+                padding: 16px 0;
+                text-align:left;
+            }
+            span.psw {
+                float: right;
+                padding-top: 0;
+                padding-right: 15px;
+            }
+            @media screen and (max-width: 300px) {
+                span.psw {
+                    display: block;
+                    float: none;
+                }
+            }
+            label {
+                color: #000000;
+            }
+            strong {
+                color: #FF0000;
+            }
+        </style>
+</head>
+  <body>
+   <form action="{{url_for('chatbotsystem')}}" method="POST">
+      <h1>College Inquiry Chabot</h1>
+      <div class="formcontainer">
+      <div class="container">
+      <label for="ufname"><strong>Hi!! Welcome to college inquiry portal</strong></label></br></br>
+	  <label for="ufname"><strong>Choose your questions from below list</strong></label></br>
+	  <label for="ufname"><strong>1.Does the college have a football team?</strong></label></br>
+	  <label for="ufname"><strong>2.Does it have Computer Science Major?</strong></label></br>
+	  <label for="ufname"><strong>3.What is the in-state tuition?</strong></label></br>
+	  <label for="ufname"><strong>4.Does its have on campus housing?</strong></label></br>
+      </div>
+	<div class="text-box">
+       <input type="text" name="question" id="message" autocomplete="off" placeholder="Type your Question Number here">
+	  <input class="send-button" type="submit" value=">">
+      </div>
+	  <a href="{{url_for('endchat')}}" align='center'">End Chat</a>
+	</div>   
+  </body>
+</html>
